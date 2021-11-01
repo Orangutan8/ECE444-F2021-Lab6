@@ -19,6 +19,7 @@ def client():
     yield app.test_client()  # tests run here
     db.drop_all()  # teardown
 
+
 def login(client, username, password):
     """Login helper function"""
     return client.post(
@@ -74,6 +75,7 @@ def test_messages(client):
     assert b"&lt;Hello&gt;" in rv.data
     assert b"<strong>HTML</strong> allowed here" in rv.data
 
+
 def test_delete_message(client):
     """Ensure the messages are being deleted"""
     rv = client.get("/delete/1")
@@ -84,9 +86,12 @@ def test_delete_message(client):
     data = json.loads(rv.data)
     assert data["status"] == 1
 
+
 def test_search(client):
     """Check that the search searches.... something"""
-    rv = client.get('/search/?query=Test')
+    rv = client.get("/search/?query=Test")
     assert rv.status_code == 200
-    #assert b"Something" in rv.data
-   # assert True
+    # assert b"Something" in rv.data
+
+
+# assert True
