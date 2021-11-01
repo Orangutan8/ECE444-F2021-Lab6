@@ -88,6 +88,7 @@ def search():
     query = request.args.get("query")
     entries = db.session.query(models.Post)
     if query:
+        flash('Something found, or at least it knows the search is here')
         return render_template('search.html', entries=entries, query=query)
     return render_template('search.html')
 

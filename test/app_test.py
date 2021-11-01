@@ -79,3 +79,10 @@ def test_delete_message(client):
     rv = client.get('/delete/1')
     data = json.loads(rv.data)
     assert data["status"] == 1
+
+def test_search(client):
+    """Check that the search searches.... something"""
+    rv = client.get('/search/?query=Test')
+    assert rv.status_code == 200
+    #assert b"Something" in rv.data
+   # assert True
