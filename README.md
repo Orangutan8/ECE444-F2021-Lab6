@@ -9,6 +9,7 @@ PROS OF TEST DRIVEN DEVELOPMENT
   - Easy to tell if functionality of a module remains
   - Encourages code modularity (giant blocks of code are harder to test)
   - Easier to tell what each function is supposed to do
+
 CONS OF TEST DRIVEN DEVELOPMENT
   - Tests must be reviewed regularly. Not only for relevance but also for performance impacts on submissions (this might only be an issue for larger projects)
   - Adds overhead to development (though I'd say it's probably bad to consider making tests overhead)
